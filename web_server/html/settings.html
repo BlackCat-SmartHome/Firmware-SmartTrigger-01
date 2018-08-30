@@ -1,0 +1,174 @@
+<!Doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=0.8, minimal-ui">
+		<meta name="description" content="SmartHome">
+		<meta name="author" content="BlackCat">
+		<meta name="theme-color" content="#36393E" />
+		<title>Acionador Residencial</title>
+		<link rel="stylesheet" href="style.css">
+		<script src="js/functions.js"></script>
+	</head>
+	<body>
+		<nav>
+			<a href="apscan.html">APs</a>
+			<a href="stations.html">Acionamentos</a>
+			<a href="settings.html">Configurações</a>
+			<a class="right" href="info.html">Informações</a>
+		</nav>
+		
+		<div class="container">
+			<div class="row">
+				<div class="col-12">
+					
+					<div id="error" class="hide"></div>
+					
+					<h1 class="header">Configurações</h1>
+					<h2>Wi-Fi</h2>
+				</div>
+			</div>
+			
+			<div class="row">
+				<div class="col-6">
+					<label for="ssid" class="labelFix">SSID</label>
+				</div>
+				<div class="col-6">
+					<input type="text" id="ssid" minlength="1" maxlength="32">
+				</div>
+			</div>
+			
+			<div class="row">
+				<div class="col-6">
+					<label for="password" class="labelFix">Senha (<span class="red">mínimo 8 caracteres</span>)</label>
+				</div>
+				<div class="col-6">
+					<input type="text" id="password" minlength="8" maxlength="32">
+				</div>
+			</div>
+			
+			<div class="row">
+				<div class="col-6">
+					<label for="ssidHidden">Ocultar SSID (<span class="red">Tenha cuidado com essa configuração!</span>)</label>
+				</div>
+				<div class="col-6">
+					<input type="checkbox" name="ssidHidden" id="ssidHidden" value="false">
+				</div>
+			</div>
+			
+			<div class="row">
+				<div class="col-6">
+					<label for="apChannel" class="labelFix">Canal</label>
+				</div>
+				<div class="col-6">
+					<input type="number" id="apChannel" min="1" max="14">
+				</div>
+			</div>
+			
+			<div class="row">
+				<div class="col-6">
+					<label for="apChannel" class="labelFix">MAC</label>
+				</div>
+				<div class="col-6">
+					<input type="text" id="macAp" min="1" max="14">
+				</div>
+			</div>
+			
+			<div class="row">
+				<div class="col-6">
+					<label for="randMacAp" class="labelFix">MAC Aleatório</label>
+				</div>
+				<div class="col-6">
+					<input type="checkbox" name="randMacAp" id="randMacAp" value="false">
+				</div>
+			</div>
+			
+			
+			<div class="row">
+				<div class="col-12">
+					<h2>Rede</h2>
+				</div>
+			</div>
+			
+			<div class="row">
+				<div class="col-6">
+					<label for="apScanHidden">DHCP</label>
+				</div>
+				<div class="col-6">
+					<input type="checkbox" name="apScanHidden" id="apScanHidden" value="false">
+				</div>
+			</div>
+			
+			<div class="row">
+				<div class="col-12">
+					<h2>MQTT</h2>
+				</div>
+			</div>
+			
+			<div class="row">
+				<div class="col-6">
+					<label for="mqttid" class="labelFix">ID</label>
+				</div>
+				<div class="col-6">
+					<input type="text" id="mqttid" min="1" max="255"> Exemplo: quarto, cozinha, garagem...
+				</div>
+			</div>
+			
+			<div class="row">
+				<div class="col-6">
+					<label for="mqttserver" class="labelFix">Servidor</label>
+				</div>
+				<div class="col-6">
+					<input type="text" id="mqttserver" min="1" max="255">
+				</div>
+			</div>
+			
+			<div class="row">
+				<div class="col-6">
+					<label for="mqttport" class="labelFix">Porta</label>
+				</div>
+				<div class="col-6">
+					<input type="number" id="mqttport" min="1" max="65536">
+				</div>
+			</div>
+			
+			<div class="row">
+				<div class="col-6">
+					<label for="mqttuser" class="labelFix">Usuário</label>
+				</div>
+				<div class="col-6">
+					<input type="text" id="mqttuser" min="1" max="255">
+				</div>
+			</div>
+			
+			<div class="row">
+				<div class="col-6">
+					<label for="mqttpass" class="labelFix">Senha</label>
+				</div>
+				<div class="col-6">
+					<input type="text" id="mqttpass" min="1" max="32">
+				</div>
+			</div>
+			
+			<div class="row">
+				<div class="col-12">
+					<br />
+					<button class="red" onclick="resetSettings()">RESET</button> 
+					<button class="red" onclick="restart()">REINICIAR</button> 
+					<button class="button-primary right" onclick="saveSettings()">SALVAR</button>
+					<br class="clear" />
+					<p id="saved"></p>
+					<br class="clear" />
+
+					<div id="copyright">
+						Versão 0.1<br />
+						Copyright (c) 2017 BlackCat<br />
+						<a href="http://blackcat8080.xyz" target="_blank">BlackCat</a>
+					</div>
+						
+					<script src="js/settings.js"></script>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

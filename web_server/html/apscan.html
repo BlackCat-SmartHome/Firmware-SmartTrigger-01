@@ -1,0 +1,64 @@
+<!Doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=0.8, minimal-ui">
+		<meta name="description" content="SmartHome">
+		<meta name="author" content="BlackCat">
+		<meta name="theme-color" content="#36393E" />
+		<title>Acionador Residencial</title>
+		<link rel="stylesheet" href="style.css">
+		<script src="js/functions.js"></script>
+	</head>
+	<body>
+		<nav>
+			<a href="apscan.html">APs</a>
+			<a href="stations.html">Acionamentos</a>
+			<a href="settings.html">Configurações</a>
+			<a class="right" href="info.html">Informações</a>
+		</nav>
+		
+		<div class="container">
+			<div class="row">
+				<div class="col-12">
+					
+					<div id="error" class="hide"></div>
+					
+					<h1 class="header">Pontos de acesso Wi-Fi</h1>
+					
+					<a id="scanInfo" class="left labelFix">Procurando...</a>
+					
+					<button onclick="scan()" id="apScanStart" class="right button-primary">scan</button>
+					
+					<p class="clear">
+						Redes encontradas: <span id="networksFound">0</span><br />
+						MAC: <span id="apMAC"></span><br />
+						<br />
+						<span id="selectAllBtns" style="visibility:'hidden'">
+							<button class="marginNull button-primary left" onclick="select(-2)">deselect all</button>
+							<button class="marginNull button-primary right" onclick="select(-1)">select all</button>
+							<br/>
+						</span>
+					</p>
+				
+					<table></table>
+					
+					<p class="small">
+						<span class="red">INFORMAÇÃO: </span><span class="bold">Talvez seja necessário recarregar a página para ver os resultados.</span>
+						<br/>
+						<br/>
+					</p>
+					
+					<div id="copyright">
+						Version 0.1<br/>
+						Copyright (c) 2018 BlackCat<br/>
+						<a href="http://blackcat8080.xyz" target="_blank">BlackCat</a>
+					</div>
+					
+					<script src="js/apscan.js"></script>
+					
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
